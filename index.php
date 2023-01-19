@@ -27,7 +27,7 @@
         <!-- FIM ÁREA DE DESTAQUE -->
 
         <!-- INÍCIO ÁREA GERAL DE PRODUTOS -->
-        <a name="produtos">$nbsp;</a>
+        <a name="produtos">&nbsp;</a>
         <?php include 'produtos_geral.php';?>
         <!-- FIM ÁREA GERAL DE PRODUTOS -->
 
