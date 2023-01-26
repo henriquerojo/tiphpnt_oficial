@@ -47,7 +47,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                                 </a>
                                 <ul class="dropdown-menu">
                                     <?php foreach ($rows_tipos as $row){?>
-                                        <li><a href="" class="produtos_por_tipo.php?id_tipo=<?php echo $row[0]?>"><?php echo $row[2]?></a></li>
+                                        <li><a href="produtos_por_tipo.php?id_tipo=<?php echo $row[0]?>"><?php echo $row[2]?></a></li>
                                     <?php };?>
                                 </ul>
                             </li>

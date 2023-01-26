@@ -1,6 +1,7 @@
 <?php 
     include "conn/connect.php";
     $idTipo = $_GET['id_tipo'];
+    $rotulo = $_GET['rotulo'];
     $listaPorTipo = $conn->query("select * from vw_tbprodutos where id_tipo_produto = $idTipo;");
     $rowPorTipo = $listaPorTipo->fetch_assoc();
     $numRows = $listaPorTipo->num_rows;
@@ -23,7 +24,7 @@
                     <a href="javascript:window.history.go(-1)" class="btn btn-danger">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
-                    Não há produtos cadastrados deste tipo
+                    Não há produtos cadastrados deste tipo <?php echo $rotulo;?>
                 </h2>
             <?php }?>
         <!-- FIM MOSTRAR SE A CONSULTA RETORNAR VAZIO -->
@@ -35,7 +36,7 @@
                     </a>
                     <strong><?php echo $rowPorTipo['rotulo_tipo']?></strong>
                 </h2>  
-        <?php }?>
+        
         <div class="row">
             <?php do{?>
                 <div class="col-sm-6 col-md-4">
@@ -67,6 +68,7 @@
                 </div>
             <?php }while ($rowPorTipo = $listaPorTipo->fetch_assoc())?>
         </div>
+        <?php }?>
         <!-- FIM SE A CONSULTAR NÃO RETORNAR VAZIO -->
     </div>
 </body>
