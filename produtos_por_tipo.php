@@ -39,7 +39,7 @@
         <div class="row">
             <?php do{?>
                 <div class="col-sm-6 col-md-4">
-                    <div class="tumbnail">
+                    <div class="thumbnail">
                         <a href="produtos/detalhes.php?id_produto=<?php echo $rowPorTipo['id_produto']?>">
                             <img src="images/<?php echo $rowPorTipo['imagem_produto']?>" class="img-responsive img-rounded">
                         </a>
