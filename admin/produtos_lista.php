@@ -19,7 +19,7 @@
     <?php include "menu_adm.php"; ?>
     <main class="container">
         <h2 class="breadcrumb alert-danger" >Lista de Produtos </h2>
-        <table class="table table-hover table-condensed tb-opacidade"> 
+        <table class="table table-hover table-condensed tb-opacidade bg-danger"> 
             <thead>
                 <th class="hidden">ID</th>
                 <th>TIPO</th>
@@ -37,38 +37,43 @@
             
             <tbody> <!-- início corpo da tabela -->
            	<!-- início estrutura repetição -->
+            <?php do{?>
                     <tr>
-                        <td class="hidden"></td>
+                        <td class="hidden">
+                            <?php echo $row['id_produto'];?>
+                        </td>
                         <td>
+                            <?php echo $row['rotulo_tipo'];?>
                             <span class="visible-xs"></span>
                             <span class="hidden-xs"></span>
                         </td>
                         <td>
                             <?php 
                                 if ($row['destaque_produto']=='Sim') { 
-                                    echo '<span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span>';
+                                    echo '<span class="glyphicon glyphicon-heart text-warning" aria-hidden="true"></span>';
                                 }else{
                                     echo '<span class="glyphicon glyphicon-ok text-info" aria-hidden="true"></span>';
                                 }
                             ?> 
-                            <?php echo $row['descri_produto']?>    
-                        </td>
-                        <td> 
+                            <?php echo $row['descri_produto'];?>    
                         </td>
                         <td>
-                            
+                            <?php echo $row['resumo_produto'];?>
                         </td>
                         <td>
-                            <img src="../images/" width="100px">
+                            <?php echo number_format($row['valor_produto'],2,',','.');?>
+                        </td>
+                        <td>
+                            <img src="../images/<?php echo $row['imagem_produto']?>" width="100px">
                         </td>
                         <td >
-                            <a href="" role="button" class="btn btn-warning btn-block btn-xs"> 
+                            <a href="produtos_atualiza.php?id_produto=<?php echo $row['id_produto'];?>" role="button" class="btn btn-warning btn-block btn-xs"> 
                                 <span class="hidden-xs">ALTERAR</span>
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </a>
                             <button 
-                                data-nome="" 
-                                data-id=""
+                                data-nome="<?php echo $row['descri_produto'];?>" 
+                                data-id="<?php echo $row['id_produto'];?>"
                                 class="delete btn btn-xs btn-block btn-danger"
                                 >
                                 <span class="hidden-xs">EXCLUIR</span>
@@ -76,7 +81,7 @@
                             </button>
                         </td>
                     </tr>
-       
+                <?php }while($row = $lista->fetch_assoc());?>
             </tbody><!-- final corpo da tabela -->
         </table>
     </main>
@@ -85,6 +90,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h4>Vamos deletar?</h4>
                     <button class="close" data-dismiss="modal" type="button">
                         &times;
                     </button>
@@ -94,10 +100,10 @@
                     <h4><span class="nome text-danger"></span></h4>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" type="button" class="btn btn-danger delete-yes">
+                    <a href="#" type="button" class="btn btn-success delete-yes">
                         Confirmar
                     </a>
-                    <button class="btn btn-success" data-dismiss="modal">
+                    <button class="btn btn-danger" data-dismiss="modal">
                         Cancelar
                     </button>
                 </div>
