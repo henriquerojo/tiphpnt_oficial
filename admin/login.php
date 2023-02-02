@@ -2,9 +2,9 @@
     include '../conn/connect.php';
     // iniciar a verificação do login
     if($_POST){
-        $login = $POST['login_usuario'];
-        $senha = md5($POST['senha_usuario']);
-        $loginRes = $conn->query("select * from tbusuarios where login_usuario = '$login' and senha senha_usuario = md5('$senha')");
+        $login = $_POST['login_usuario'];
+        $senha = md5($_POST['senha_usuario']);
+        $loginRes = $conn->query("select * from tbusuarios where login_usuario = '$login' and senha_usuario = '$senha';");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
         // se a sessão não existir
@@ -21,10 +21,10 @@
                 echo "<script>window.open('index.php','_self')</script>";
             }
             else{
-                echo "<script>window.open('../cliente/index.php?cliente=".$login.".','_self')</script>";
+                echo "<script>window.open('../cliente/index.php?cliente=".$login."','_self')</script>";
             }
         }else{
-            echo "<script>windows.open('invasor.php','_self')</script>";
+            echo "<script>window.open('invasor.php','_self')</script>";
         }
     }
 ?>
