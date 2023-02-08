@@ -75,7 +75,7 @@ $nlinhas = $lista_fk->num_rows;
                         <form action="produtos_atualiza.php" method="post" 
                         name="form_produto_insere" enctype="multipart/form-data"
                         id="form_produto_insere">
-                        <input type="hidden" name="id_produto" id="id_produto" value="<?php $row['id_produto'];?>">
+                        <input type="hidden" name="id_produto" id="id_produto" value="<?php echo $row['id_produto'];?>">
                             <label for="id_tipo_produto">Tipo:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
