@@ -30,7 +30,7 @@ $num_linhas = $lista->num_rows;
                     <strong>Produtos geral</strong>
                 </h2>
         <div class="row">
-            <?php }?>
+            
                 <?php do{?>
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
@@ -60,6 +60,7 @@ $num_linhas = $lista->num_rows;
                     </div>
                 </div>
             <?php }while ($row_produto = $lista->fetch_assoc())?>
+            <?php }?>
     </div>
 </body>
 </html>
