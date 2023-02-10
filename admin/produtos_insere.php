@@ -53,7 +53,7 @@ if ($_POST){
                 <h2 class="breadcrumb text-danger">
                     <a href="produtos_lista.php">
                         <button class="btn btn-danger">
-                            <span class="glyphicon-glyphicon-chevron-left"></span>
+                            <span class="glyphicon glyphicon-chevron-left"></span>
                         </button>
                     </a>
                     Inserindo Produtos
