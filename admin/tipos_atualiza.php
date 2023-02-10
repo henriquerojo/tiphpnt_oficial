@@ -8,8 +8,5 @@ if($_POST){
 
     $id = $_POST['id_tipo'];
 
-    $updateSql = "update tbtipos
-                    set sigla_tipo = '$sigla_tipo',
-                        rotulo_tipo = '$rotulo_tipo'"
 }
 ?>
