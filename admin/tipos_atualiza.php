@@ -7,6 +7,6 @@ if($_POST){
     $rotulo_tipo = $_POST['rotulo_tipo'];
 
     $id = $_POST['id_tipo'];
-
+//  vai corinthians
 }
 ?>
