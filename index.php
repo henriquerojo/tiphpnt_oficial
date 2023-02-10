@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="css/estilo.css">
     <title>Chuleta Quente Churrascaria</title>
 </head>
-<body class="fundofixo">
+<body class="fundofixo" style="padding-top: 60px;">
 
     <!-- ÍNICIO ÁREA DE MENU -->
     <?php include 'menu_publico.php';?>
     <a name="home">&nbsp;</a>
-    <main class="container">
-        
         <!-- ÍNICIO ÁREA DE CAROUSEL -->
         <?php include 'carousel.php';?>
         <!-- FIM ÁREA DE CAROUSEL -->
+    <main class="container">
+        
+        
 
         <!-- ÍNICIO ÁREA DE DESTAQUE -->
         <a name="destaques">&nbsp;</a>
