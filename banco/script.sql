@@ -106,16 +106,16 @@ CREATE VIEW vw_tbprodutos AS
 	WHERE p.id_tipo_produto=t.id_tipo;
 COMMIT;
 
---Criando o tipo bebidas
+-- Criando o tipo bebidas
 INSERT tbtipos VALUES (3,'beb','Bebidas');
 
---Alterando as senhas dos usuarios
+-- Alterando as senhas dos usuarios
 UPDATE tbusuarios SET senha_usuario = '1234'WHERE id_usuario = 1;
 UPDATE tbusuarios SET senha_usuario = '1234'WHERE id_usuario = 2;
 UPDATE tbusuarios SET senha_usuario = '456'WHERE id_usuario = 3;
 UPDATE tbusuarios SET senha_usuario = '789'WHERE id_usuario = 4;
 
---Colocando criptografia nas senhas dos usuarios
+-- Colocando criptografia nas senhas dos usuarios
 ALTER TABLE tbusuarios CHANGE COLUMN senha_usuario senha_usuario varchar(32);
 UPDATE tbusuarios SET senha_usuario = md5(senha_usuario) WHERE id_usuario BETWEEN 1 AND 4;
 
