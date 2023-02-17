@@ -119,3 +119,161 @@ UPDATE tbusuarios SET senha_usuario = '789'WHERE id_usuario = 4;
 ALTER TABLE tbusuarios CHANGE COLUMN senha_usuario senha_usuario varchar(32);
 UPDATE tbusuarios SET senha_usuario = md5(senha_usuario) WHERE id_usuario BETWEEN 1 AND 4;
 
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema ti93phpdb01
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema ti93phpdb01
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `ti93phpdb01` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `ti93phpdb01`.`tbusuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ti93phpdb01`.`tbusuarios` (
+  `id_usuario` INT(11) NOT NULL AUTO_INCREMENT,
+  `login_usuario` VARCHAR(30) NOT NULL,
+  `senha_usuario` VARCHAR(32) NULL DEFAULT NULL,
+  `nivel_usuario` ENUM('sup', 'com') NOT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE INDEX `login_usuario_uniq` (`login_usuario` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tbclientes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`tbclientes` (
+  `id_cliente` INT NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
+  `cpf` VARCHAR(11) NULL,
+  `tbusuarios` INT(11) NOT NULL,
+  PRIMARY KEY (`id_cliente`, `nome`),
+  INDEX `fk_tbclientes_tbusuarios1_idx` (`tbusuarios` ASC) VISIBLE,
+  CONSTRAINT `fk_tbclientes_tbusuarios1`
+    FOREIGN KEY (`tbusuarios`)
+    REFERENCES `ti93phpdb01`.`tbusuarios` (`id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tbcontato_cliente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`tbcontato_cliente` (
+  `id_contato_cliente` INT NOT NULL,
+  `email` VARCHAR(70) NOT NULL,
+  `tbclientes` INT NOT NULL,
+  PRIMARY KEY (`id_contato_cliente`),
+  INDEX `fk_tbcontato_cliente_tbclientes1_idx` (`tbclientes` ASC) VISIBLE,
+  CONSTRAINT `fk_tbcontato_cliente_tbclientes1`
+    FOREIGN KEY (`tbclientes`)
+    REFERENCES `mydb`.`tbclientes` (`id_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tbreservas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`tbreservas` (
+  `id_reserva` INT NOT NULL,
+  `mesa_reserva` TINYINT(1) NOT NULL,
+  `codigo_reserva` MEDIUMINT(3) NOT NULL,
+  `status_reserva` VARCHAR(12) NOT NULL,
+  `tbclientes` INT NOT NULL,
+  PRIMARY KEY (`id_reserva`),
+  INDEX `fk_tbreservas_tbclientes_idx` (`tbclientes` ASC) VISIBLE,
+  CONSTRAINT `fk_tbreservas_tbclientes`
+    FOREIGN KEY (`tbclientes`)
+    REFERENCES `mydb`.`tbclientes` (`id_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tbpedidos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`tbpedidos` (
+  `idpedido` INT NOT NULL,
+  `numeropessoas` VARCHAR(45) NOT NULL,
+  `data_pedido` VARCHAR(45) NULL,
+  `data_final` VARCHAR(45) NULL,
+  PRIMARY KEY (`idpedido`))
+ENGINE = InnoDB;
+
+USE `ti93phpdb01` ;
+
+-- -----------------------------------------------------
+-- Table `ti93phpdb01`.`tbtipos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ti93phpdb01`.`tbtipos` (
+  `id_tipo` INT(11) NOT NULL AUTO_INCREMENT,
+  `sigla_tipo` VARCHAR(3) NOT NULL,
+  `rotulo_tipo` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`id_tipo`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `ti93phpdb01`.`tbprodutos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ti93phpdb01`.`tbprodutos` (
+  `id_produto` INT(11) NOT NULL AUTO_INCREMENT,
+  `id_tipo_produto` INT(11) NOT NULL,
+  `descri_produto` VARCHAR(100) NOT NULL,
+  `resumo_produto` VARCHAR(1000) NULL DEFAULT NULL,
+  `valor_produto` DECIMAL(9,2) NULL DEFAULT NULL,
+  `imagem_produto` VARCHAR(50) NULL DEFAULT NULL,
+  `destaque_produto` ENUM('Sim', 'Não') NOT NULL,
+  PRIMARY KEY (`id_produto`),
+  INDEX `id_tipo_produto_fk` (`id_tipo_produto` ASC) VISIBLE,
+  CONSTRAINT `id_tipo_produto_fk`
+    FOREIGN KEY (`id_tipo_produto`)
+    REFERENCES `ti93phpdb01`.`tbtipos` (`id_tipo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 10
+DEFAULT CHARACTER SET = utf8;
+
+USE `ti93phpdb01` ;
+
+-- -----------------------------------------------------
+-- Placeholder table for view `ti93phpdb01`.`vw_tbprodutos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ti93phpdb01`.`vw_tbprodutos` (`id_produto` INT, `id_tipo_produto` INT, `sigla_tipo` INT, `rotulo_tipo` INT, `descri_produto` INT, `resumo_produto` INT, `valor_produto` INT, `imagem_produto` INT, `destaque_produto` INT);
+
+-- -----------------------------------------------------
+-- View `ti93phpdb01`.`vw_tbprodutos`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ti93phpdb01`.`vw_tbprodutos`;
+USE `ti93phpdb01`;
+CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ti93phpdb01`.`vw_tbprodutos` AS select `p`.`id_produto` AS `id_produto`,`p`.`id_tipo_produto` AS `id_tipo_produto`,`t`.`sigla_tipo` AS `sigla_tipo`,`t`.`rotulo_tipo` AS `rotulo_tipo`,`p`.`descri_produto` AS `descri_produto`,`p`.`resumo_produto` AS `resumo_produto`,`p`.`valor_produto` AS `valor_produto`,`p`.`imagem_produto` AS `imagem_produto`,`p`.`destaque_produto` AS `destaque_produto` from (`ti93phpdb01`.`tbprodutos` `p` join `ti93phpdb01`.`tbtipos` `t`) where `p`.`id_tipo_produto` = `t`.`id_tipo`;
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
