@@ -9,20 +9,20 @@ $mail = new PHPMailer;
 $mail->isSMTP();
 
 // Configurações do servidor de email
-$mail->Host = 'smtp.gmail.com';
+$mail->Host = 'smtp.office365.com';
 $mail->Port = '587';
-$mail->SMTPSecure = 'tls';
+$mail->SMTPSecure = 'STARTTLS';
 $mail->SMTPAuth = 'true';
-$mail->Username = 'henriquerojo10@gmail.com';
-$mail->Password = 'af5jk540';
+$mail->Username = 'henriqueti93@outlook.com';
+$mail->Password = 'henrique1';
 
 // Configuração de mensagem
 $mail->setFrom($mail->Username, "Seu Nome");
-$mail->addAddress('henriquerojo10@gmail.com');
+$mail->addAddress('henriqueti93@outlook.com');
 $mail->Subject = "Fale Conosco e VAI CORINTHIANS";
 
 $conteudo_email = "
-Você recebeu uma mensagem de $nome ($email):
+Voce recebeu uma mensagem de $nome ($email):
 <br>
 Mensagem: <br>
 $comentario
