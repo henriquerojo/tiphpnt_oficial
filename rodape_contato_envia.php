@@ -17,8 +17,9 @@ $mail->Username = 'henriqueti93@outlook.com';
 $mail->Password = 'henrique1';
 
 // Configuração de mensagem
-$mail->setFrom($mail->Username, "Seu Nome");
-$mail->addAddress($email);
+$mail->setFrom($mail->Username, "Seu Nome"); // remetente(sistema)
+$mail->addAddress($mail->Username);                
+
 $mail->Subject = "Fale Conosco e VAI CORINTHIANS";
 
 $conteudo_email = "

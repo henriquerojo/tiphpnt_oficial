@@ -31,6 +31,11 @@ $rows_tipos = $lista_tipos->fetch_all();
                 <!-- INÍCIO NAV DIREITA -->
                     <div class="collapse navbar-collapse" id="menupublico">
                         <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <button type="button" class="btn btn-danger navbar-btn">
+                                    <a href="cliente/index.php">RESERVAS</a>
+                                </button>
+                            </li>
                             <li class="active">
                                 <a href="index.php">
                                     <span class="glyphicon glyphicon-home">
