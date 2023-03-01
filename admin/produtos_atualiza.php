@@ -72,7 +72,7 @@ $nlinhas = $lista_fk->num_rows;
                 </h2>
                 <div class="thumbnail">
                     <div class="alert alert-danger" role="alert">
-                        <form action="produtos_atualiza.php" method="post" 
+                        <form action="produtos_atualiza.php" method="post"
                         name="form_produto_insere" enctype="multipart/form-data"
                         id="form_produto_insere">
                         <input type="hidden" name="id_produto" id="id_produto" value="<?php echo $row['id_produto'];?>">
