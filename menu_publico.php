@@ -32,30 +32,36 @@ $rows_tipos = $lista_tipos->fetch_all();
                     <div class="collapse navbar-collapse" id="menupublico">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <button type="button" class="btn btn-danger navbar-btn">
+                                <button type="button" class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#modalReserva">
                                     FAÇA SUA RESERVA
                                 </button>
                             </li>
                             <!-- INÍCIO DO MODAL PARA FAZER RESERVA -->
-                            <div class="modal fade" id="modalEdit" role="dialog">
-                                <div class="modal-dialog">
+                            <div class="modal fade" id="modalReserva" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1">
+                                <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4>Regras da Reserva</h4>
-                                            <button class="close" data-dismiss="modal" type="button">
+                                            <h4 class="modal-title" id="exampleModalLabel">Regras da Reserva</h4>
+                                            <button class="close" data-dismiss="modal" type="button" aria-label="Fechar">
                                                 &times;
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            Deseja mesmo excluir o item?
+                                            <p>
+                                            - Só uma pessoa é responsável por ser o titular da reserva;
+                                            - O titular da reserva e todos os demais acompanhantes terão 10% de desconto em bebidas;
+                                            - O número máximo de pessoas por mesa é de 8 pessoas;
+                                            - O número máximo de mesas por reserva são 2;
+                                            - Somente um pedido de reserva por dia por CPF;
+                                            </p>
                                             <h4><span class="nome text-danger"></span></h4>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="#" type="button" class="btn btn-success delete-yes">
-                                                Confirmar
-                                            </a>
-                                            <button class="btn btn-danger" data-dismiss="modal">
+                                            <a type="button" class="btn btn-secondary" data-dismiss="modal">
                                                 Cancelar
+                                            </a>
+                                            <button class="btn btn-primary" type="button">
+                                                Confirmar
                                             </button>
                                         </div>
                                     </div>
