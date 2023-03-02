@@ -36,6 +36,32 @@ $rows_tipos = $lista_tipos->fetch_all();
                                     FAÇA SUA RESERVA
                                 </button>
                             </li>
+                            <!-- INÍCIO DO MODAL PARA FAZER RESERVA -->
+                            <div class="modal fade" id="modalEdit" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4>Regras da Reserva</h4>
+                                            <button class="close" data-dismiss="modal" type="button">
+                                                &times;
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Deseja mesmo excluir o item?
+                                            <h4><span class="nome text-danger"></span></h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="#" type="button" class="btn btn-success delete-yes">
+                                                Confirmar
+                                            </a>
+                                            <button class="btn btn-danger" data-dismiss="modal">
+                                                Cancelar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIM DO MODAL PARA FAZER RESERVA -->
                             <li class="active">
                                 <a href="index.php">
                                     <span class="glyphicon glyphicon-home">
