@@ -46,8 +46,8 @@ if ($_POST){
                 <div class="thumbnail">
                     <div class="alert alert-danger" role="alert">
                         <form action="tipos_insere.php" method="post" 
-                        name="form_produto_insere" enctype="multipart/form-data"
-                        id="form_produto_insere">
+                        name="form_tipos_insere" enctype="multipart/form-data"
+                        id="form_tipos_insere">
                             <label for="id_tipo_produto">Tipo:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
