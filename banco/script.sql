@@ -277,3 +277,50 @@ CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY D
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Criação da tabela cliente
+-- -----------------------------------------------------
+create table tbclientes(
+id_cliente int not null auto_increment,
+nome varchar(45) not null,
+cpf varchar(11) not null,
+tbusuarios int not null,
+PRIMARY KEY (id_cliente),
+CONSTRAINT tbusuarios FOREIGN KEY (tbusuarios) REFERENCES tbusuarios(id_usuario)
+);
+
+-- -----------------------------------------------------
+-- Criação da tabela contato_cliente 
+-- -----------------------------------------------------
+create table tbcontato_cliente(
+id_contato_cliente int not null auto_increment,
+email varchar(70) not null,
+tbcliente int,
+PRIMARY KEY (id_contato_cliente),
+CONSTRAINT idcliente FOREIGN KEY (tbcliente) REFERENCES tbclientes(id_cliente)
+);
+-- -----------------------------------------------------
+-- Criação da tabela reservas 
+-- -----------------------------------------------------
+create table tbreservas(
+id_reserva int not null auto_increment,
+mesa_reserva varchar(3) not null,
+codigo_reserva mediumint(3) not null,
+status_reserva varchar(12) not null,
+tbcliente int not null,
+PRIMARY KEY (id_reserva),
+CONSTRAINT tbcliente FOREIGN KEY (tb_cliente) REFERENCES tbclientes(id_cliente)
+);
+
+
+-- -----------------------------------------------------
+-- Criação da tabela pedidos
+-- -----------------------------------------------------
+create table tbpedidos(
+id_pedido int not null auto_increment,
+data_pedido datetime not null,
+numero_pessoas varchar(2) not null,
+motivo_negativa text not null,
+PRIMARY KEY (id_pedido)
+);
