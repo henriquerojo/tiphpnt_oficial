@@ -49,7 +49,7 @@ if ($_POST){
 <?php include "menu_adm.php";?>
     <main class="container">
         <div class="row">
-            <div class="col-xs-12 sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-6 col-md-8">
                 <h2 class="breadcrumb text-danger">
                     <a href="produtos_lista.php">
                         <button class="btn btn-danger">
@@ -98,7 +98,7 @@ if ($_POST){
                             <label for="resumo_produto">Resumo:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-list-out" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                 </span>
                                 <textarea name="resumo_produto" id="resumo_produto"
                                 cols="30" rows="8"
