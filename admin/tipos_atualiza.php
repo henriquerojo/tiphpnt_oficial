@@ -45,10 +45,10 @@ $numRows = $lista->num_rows;
                 <h2 class="breadcrumb text-danger">
                         <a href="tipos_lista.php">
                             <button class="btn btn-danger">
-                                <span class="glyphicon-glyphicon-chevron-left"></span>
+                                <span class="glyphicon glyphicon-chevron-left"></span>
                             </button>
                         </a>
-                        Inserindo Tipos
+                        Alterando Tipos
                     </h2>
                     <div class="thumbnail">
                         <div class="alert alert-danger" role="alert">
@@ -63,8 +63,12 @@ $numRows = $lista->num_rows;
                                 class="form-control" placeholder="Digite a sigla do tipo" maxlength="100" value="<?php echo $row['sigla_tipo'];?>">
                             </div>
                             <label for="rotulo_tipo">Rótulo: </label>
-                            <div>
-                                
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+                                </span>
+                                <input type="text" name="rotulo_tipo" id="rotulo_tipo" 
+                                class="form-control" placeholder="Digite o rótulo do tipo" maxlength="100" value="<?php echo $row['rotulo_tipo'];?>">
                             </div>
                             </form> 
                         </div>
