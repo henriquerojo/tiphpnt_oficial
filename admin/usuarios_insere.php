@@ -14,7 +14,7 @@ if ($_POST){
     $resultado = $conn->query($insereTipos);
 }
     if(mysqli_insert_id($conn)){
-        header('location: tipos_lista.php');
+        header('location: usuarios_lista.php');
     }
     $consulta_fk = "select * from tbtipos order by rotulo_tipo asc";
     $lista_fk = $conn->query($consulta_fk);
