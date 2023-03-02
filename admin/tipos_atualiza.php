@@ -70,6 +70,8 @@ $numRows = $lista->num_rows;
                                 <input type="text" name="rotulo_tipo" id="rotulo_tipo" 
                                 class="form-control" placeholder="Digite o rótulo do tipo" maxlength="100" value="<?php echo $row['rotulo_tipo'];?>">
                             </div>
+                            <br>
+                            <input type="submit" name="atualizar" id="atualizar" class="btn btn-danger btn-block" value="Atualizar">
                             </form> 
                         </div>
                     </div>
