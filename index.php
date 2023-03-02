@@ -15,11 +15,13 @@
     <?php include 'menu_publico.php';?>
     <a name="home">&nbsp;</a>
         <!-- ÍNICIO ÁREA DE CAROUSEL -->
-        <?php include 'carousel.php';?>
+        <?php // include 'carousel.php';?>
         <!-- FIM ÁREA DE CAROUSEL -->
     <main class="container">
         
-        
+        <!-- ÍNICIO ÁREA DE CAROUSEL -->
+        <?php include 'carousel.php';?>
+        <!-- FIM ÁREA DE CAROUSEL -->
 
         <!-- ÍNICIO ÁREA DE DESTAQUE -->
         <a name="destaques">&nbsp;</a>
