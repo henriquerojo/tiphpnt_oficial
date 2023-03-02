@@ -1,7 +1,6 @@
 <?php 
-include 'acesso_com.php';
-include '../conn/connect.php';
-
+    include 'acesso_com.php';
+    include '../conn/connect.php';
     $lista = $conn->query("select * from tbusuarios");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
@@ -48,13 +47,13 @@ include '../conn/connect.php';
                             <?php echo $row['nivel_usuario'];?>
                         </td>
                         <td >
-                            <a href="produtos_atualiza.php?id_produto=<?php echo $row['id_produto'];?>" role="button" class="btn btn-warning btn-block btn-xs"> 
+                            <a href="usuarios_atualiza.php?id_usuario=<?php echo $row['id_usuario'];?>" role="button" class="btn btn-warning btn-block btn-xs"> 
                                 <span class="hidden-xs">ALTERAR</span>
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </a>
                             <button 
-                                data-nome="<?php echo $row['descri_produto'];?>" 
-                                data-id="<?php echo $row['id_produto'];?>"
+                                data-nome="<?php echo $row['login_usuario'];?>" 
+                                data-id="<?php echo $row['id_usuario'];?>"
                                 class="delete btn btn-xs btn-block btn-danger"
                                 >
                                 <span class="hidden-xs">EXCLUIR</span>
@@ -100,7 +99,7 @@ include '../conn/connect.php';
         var id = $(this).data('id'); // busca o id (data-id)
         //console.log(id + ' - ' + nome); //exibe no console
         $('span.nome').text(nome); // insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','produtos_excluir.php?id_produto='+id); //chama o arquivo php para excluir o produto
+        $('a.delete-yes').attr('href','usuarios_excluir.php?id_usuario='+id); //chama o arquivo php para excluir o produto
         $('#modalEdit').modal('show'); // chamar o modal
     });
 </script>
