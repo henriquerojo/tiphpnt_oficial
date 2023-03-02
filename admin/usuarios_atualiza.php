@@ -14,7 +14,11 @@ if ($_POST){
                    VALUES
                    ('$id_usuario','$login_usuario','$senha_usuario','$senha_usuario','$nivel_usuario');";
     $resultado = $conn->query($insereUser);
-    
+
+    $consulta = "select * from tbusuarios";
+    $lista = $conn->query($consulta);
+    $row = $lista->fetch_assoc();
+    $nlinhas = $lista->num_rows;
 }
 // após a gravação bem sucedida do produto, volta (atualiza) lista
     if(mysqli_insert_id($conn)){
@@ -62,9 +66,23 @@ if ($_POST){
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
                                 </span>
-                                <input type="text" name="nivel_usuario" id="nivel_usuario" 
-                                class="form-control" placeholder="Digite o Nível do usuario"
-                                maxlength="100" required>
+                                <select name="nivel_usuario" id="nivel_usuario" class="form-control" required>
+                                    <?php do {?>
+                                        <option value="<?php echo $row['nivel_usuario']?>"
+                                            <?php 
+                                                if(!(strcmp($row['id_usuario'],$row['nivel_usuario']))){
+                                                    echo "selected=\"selected\"";
+                                                }
+                                            
+                                            ?>
+                                        
+                                        >
+
+                                            <?php echo $row['nivel_usuario']?>
+                                        
+                                        </option>
+                                    <?php } while ($row = $lista -> fetch_assoc());?>
+                                </select>
                             </div>
                             <br>
                             <input type="submit" name="enviar" id="enviar" class="btn btn-danger btn-block" value="Cadastrar">
