@@ -33,7 +33,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <button type="button" class="btn btn-danger navbar-btn">
-                                    <a href="cliente/index.php">RESERVAS</a>
+                                    FAÇA SUA RESERVA
                                 </button>
                             </li>
                             <li class="active">
