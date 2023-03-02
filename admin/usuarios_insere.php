@@ -48,64 +48,23 @@ if ($_POST){
                         <form action="usuarios_insere.php" method="post" 
                         name="form_usuario_insere" enctype="multipart/form-data"
                         id="form_usuario_insere">
-                            <label for="id_tipo_produto">Tipo:</label>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
-                                </span>
-                                <select name="id_tipo_produto" id="id_tipo_produto" class="form-control" required>
-                                    <?php do {?>
-                                        <option value="<?php echo $row_fk['id_tipo']?>">
-                                            <?php echo $row_fk['rotulo_tipo']?>
-                                        </option>
-                                    <?php } while ($row_fk = $lista_fk -> fetch_assoc());?>
-                                </select>
-                            </div>
-                            <label for="destaque_produto">Destaque:</label>
-                            <div class="input-group">
-                                <label for="destaque_produto_s" class="radio-inline">
-                                    <input type="radio" name="destaque_produto" id="destaque_produto" value="Sim">Sim
-                                </label>
-                                <label for="destaque_produto_n" class="radio-inline">
-                                    <input type="radio" name="destaque_produto" id="destaque_produto" value="Não" checked>Não
-                                </label>
-                            </div>
-                            <label for="descri_produto">Descrição:</label>
+                            <label for="login_usuario">Login:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
                                 </span>
-                                <input type="text" name="descri_produto" id="descri_produto" 
-                                class="form-control" placeholder="Digite a descrição do Produto"
+                                <input type="text" name="login_usuario" id="login_usuario" 
+                                class="form-control" placeholder="Digite o Login do usuario"
                                 maxlength="100" required>
                             </div>
-
-                            <label for="resumo_produto">Resumo:</label>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-list-out" aria-hidden="true"></span>
-                                </span>
-                                <textarea name="resumo_produto" id="resumo_produto"
-                                cols="30" rows="8"
-                                class="form-control" placeholder="Digite os detalhes do Produto"
-                                required></textarea>
-                            </div>
-
-                            <label for="valor_produto">Valor:</label>
+                            <label for="nivel_usuario">Nível:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
                                 </span>
-                                <input type="number" name="valor_produto" id="valor_produto" 
-                                class="form-control" required min="0" step="0.01">
-                            </div>
-                            <label for="imagem_produto">Imagem:</label>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-pictures" aria-hidden="true"></span>
-                                </span>
-                                <img src="" name="imagem" id="imagem" alt="" class="img-responsive">
-                                <input type="file" name="imagem_produto" id="imagem_produto" class="form-control" accept="image/*">
+                                <input type="text" name="nivel_usuario" id="nivel_usuario" 
+                                class="form-control" placeholder="Digite o Nível do usuario"
+                                maxlength="100" required>
                             </div>
                             <br>
                             <input type="submit" name="enviar" id="enviar" class="btn btn-danger btn-block" value="Cadastrar">
@@ -115,32 +74,6 @@ if ($_POST){
             </div>
         </div>
     </main>
-<!-- SCRIPT PARA IMAGEM -->
-<script>
-    document.getElementById("imagem_produto").onchange = function(){
-        var reader = new FileReader();
-        if(this.files[0].size>528385){
-            alert("A imagem deve ter no no máximo 500 KB");
-            $("#imagem").attr("src", "blank");
-            $("#imagem").hide();
-            $("#imagem_produto").wrap('<form>').closest('form').get(0).reset();
-            $("#imagem_produto").unwrap;
-            return false
-        }
-        if(this.files[0].type.indexOf("image") == -1){
-            alert("Formato Inválido, Escolha Uma Imagem!");
-            $("#imagem").attr("src", "blank");
-            $("#imagem").hide();
-            $("#imagem_produto").wrap('<form>').closest('form').get(0).reset();
-            $("#imagem_produto").unwrap;
-            return false
-        }
-        reader.onload = function(e){
-            document.getElementById("imagem").src = e.target.result
-            $("#imagem").show();
-        }
-        reader.readAsDataURL(this.files[0])
-    }
 </script>
 </body>
 </html>
