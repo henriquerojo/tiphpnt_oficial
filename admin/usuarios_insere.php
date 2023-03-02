@@ -3,20 +3,21 @@ include 'acesso_com.php';
 include '../conn/connect.php';
 
 if ($_POST){
-    $id_tipo = $_POST['id_tipo'];
-    $sigla_tipo = $_POST['sigla_tipo'];
-    $rotulo_tipo = $_POST['rotulo_tipo'];
+    $id_usuario = $_POST['id_usuario'];
+    $login_usuario = $_POST['login_usuario'];
+    $senha_usuario = $_POST['senha_usuario'];
+    $nivel_usuario = $_POST['nivel_usuario'];
 
-    $insereTipos = "INSERT INTO tbtipos
-                (id_tipo, sigla_tipo, rotulo_tipo)
+    $insereUsuarios = "INSERT INTO tbusuarios
+                (id_usuario, login_usuario, senha_usuario, nivel_usuario)
                 VALUES
-                ('$id_tipo','$sigla_tipo','$rotulo_tipo');";
-    $resultado = $conn->query($insereTipos);
+                ('$id_usuario','$login_usuario','$senha_usuario', '$nivel_usuario');";
+    $resultado = $conn->query($insereUsuarios);
 }
     if(mysqli_insert_id($conn)){
         header('location: usuarios_lista.php');
     }
-    $consulta_fk = "select * from tbtipos order by rotulo_tipo asc";
+    $consulta_fk = "select * from tbusuarios";
     $lista_fk = $conn->query($consulta_fk);
     $row_fk = $lista_fk->fetch_assoc();
     $nlinhas = $lista_fk->num_rows;
@@ -41,7 +42,7 @@ if ($_POST){
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </button>
                     </a>
-                    Inserindo Tipos
+                    Inserindo Usuários
                 </h2>
                 <div class="thumbnail">
                     <div class="alert alert-danger" role="alert">
