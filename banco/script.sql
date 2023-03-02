@@ -286,8 +286,10 @@ id_cliente int not null auto_increment,
 nome varchar(45) not null,
 cpf varchar(11) not null,
 tbusuarios int not null,
+tbpedido int not null,
 PRIMARY KEY (id_cliente),
-CONSTRAINT tbusuarios FOREIGN KEY (tbusuarios) REFERENCES tbusuarios(id_usuario)
+CONSTRAINT tbusuarios FOREIGN KEY (tbusuarios) REFERENCES tbusuarios(id_usuario),
+CONSTRAINT tbpedido FOREIGN KEY (tbpedido) REFERENCES tbpedidos(id_pedido)
 );
 
 -- -----------------------------------------------------
@@ -313,7 +315,6 @@ PRIMARY KEY (id_reserva),
 CONSTRAINT tbcliente FOREIGN KEY (tb_cliente) REFERENCES tbclientes(id_cliente)
 );
 
-
 -- -----------------------------------------------------
 -- Criação da tabela pedidos
 -- -----------------------------------------------------
@@ -324,3 +325,4 @@ numero_pessoas varchar(2) not null,
 motivo_negativa text not null,
 PRIMARY KEY (id_pedido)
 );
+
