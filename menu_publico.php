@@ -111,12 +111,17 @@ $rows_tipos = $lista_tipos->fetch_all();
                                             <h4><span class="nome text-danger"></span></h4>
                                         </div>
                                         <div class="modal-footer">
-                                            <a type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            <a href="index.php">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                 Cancelar
-                                            </a>
-                                            <button class="btn btn-primary" type="button">
-                                                <a href="pedido.php">Confirmar</a>
                                             </button>
+                                            </a>
+                                            
+                                            <a href="pedido.php">
+                                            <button class="btn btn-primary" type="button">
+                                                Confirmar
+                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
