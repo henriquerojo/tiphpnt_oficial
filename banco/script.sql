@@ -312,7 +312,7 @@ codigo_reserva mediumint(3) not null,
 status_reserva varchar(12) not null,
 tbcliente int not null,
 PRIMARY KEY (id_reserva),
-CONSTRAINT tbcliente FOREIGN KEY (tb_cliente) REFERENCES tbclientes(id_cliente)
+CONSTRAINT tbcliente FOREIGN KEY (tbcliente) REFERENCES tbclientes(id_cliente)
 );
 
 -- -----------------------------------------------------
