@@ -115,7 +115,7 @@ $rows_tipos = $lista_tipos->fetch_all();
                                                 Cancelar
                                             </a>
                                             <button class="btn btn-primary" type="button">
-                                                <a href="">Confirmar</a>
+                                                <a href="pedido.php">Confirmar</a>
                                             </button>
                                         </div>
                                     </div>
