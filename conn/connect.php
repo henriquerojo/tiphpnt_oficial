@@ -2,8 +2,8 @@
 
 $host = "localhost"; //definindo o host que estara o banco, nesse caso o banco esta local
 $database = "ti93phpdb01"; // definindo qual banco de dados vamos usar
-$user = "root"; // 
-$pass = ""; //
+$user = "root"; // definindo qual usuário pode acessar o banco
+$pass = ""; // definindo a senha para acessar o banco
 $charset = "utf8"; //padrão de acentuação brasileiro 
 $port = "3306"; //porta na qual é usada por padrão pelo sql
 

@@ -2,7 +2,7 @@
 include 'conn/connect.php';
 $lista= $conn->query("select * from vw_tbprodutos");
 $row_produtos = $lista->fetch_assoc();
-$num_linhas = $lista->num_rows;
+$num_linhas = $lista->num_rows;  
 ?>
 
 <!DOCTYPE html>
