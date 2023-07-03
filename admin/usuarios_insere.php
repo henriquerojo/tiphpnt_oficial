@@ -46,24 +46,37 @@ if ($_POST){
                 </h2>
                 <div class="thumbnail">
                     <div class="alert alert-danger" role="alert">
-                        <form action="tipos_insere.php" method="post" 
-                        name="form_tipos_insere" enctype="multipart/form-data"
-                        id="form_tipos_insere">
-                            <label for="id_tipo_produto">Tipo:</label>
+                        <form action="usuarios_insere.php" method="post" 
+                        name="form_usuarios_insere" enctype="multipart/form-data"
+                        id="form_usuarios_insere">
+                            <label for="login_usuario">Login:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 </span>
-                                <input type="text" name="rotulo_tipo" class="form-control" placeholder="Digite o tipo do produto" required>
+                                <input type="text" name="login_usuario" class="form-control" placeholder="Digite o login do usuário" required>
                             </div>
 
-                            <label for="id_tipo_produto">Sigla:</label>
+                            <label for="senha_usuario">Senha:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                </span>
+                                <input type="password" name="senha_usuario" class="form-control" placeholder="Digite a senha do usuário" required>
+                            </div>
+                            
+
+                            <label for="nivel_usuario">Nível do Usuário:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
                                 </span>
-                                <input type="text" name="sigla_tipo" class="form-control" placeholder="Digite a sigla do produto" required>
+                                <select name="nivel_usuario" id="nivel_usuario" class="form-control" required>
+                                    <option value="sup">Superior</option>
+                                    <option value="com">Comum</option>
+                                </select>
                             </div>
+
                             <br>
                             <input type="submit" name="enviar" id="enviar" class="btn btn-danger btn-block" value="Cadastrar">
                         </form>
