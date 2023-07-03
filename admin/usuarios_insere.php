@@ -5,7 +5,7 @@ include '../conn/connect.php';
 if ($_POST){
     $id_usuario = $_POST['id_usuario'];
     $login_usuario = $_POST['login_usuario'];
-    $senha_usuario = $_POST['senha_usuario'];
+    $senha_usuario = md5($_POST['senha_usuario']);
     $nivel_usuario = $_POST['nivel_usuario'];
 
     $insereUsuarios = "INSERT INTO tbusuarios
