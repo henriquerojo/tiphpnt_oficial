@@ -80,9 +80,8 @@ $rows_tipos = $lista_tipos->fetch_all();
                             </li>
                         </ul>
                     </div>
-                <!-- FIM NAV DIREITA -->
-            </div>
-        </nav>
+                </div>
+            </nav> <!-- FIM NAV DIREITA -->
     <!-- FIM ABRE A BARRA DE NAVEGAÇÃO -->
 
                                 <!-- INÍCIO DO MODAL PARA FAZER RESERVA -->
