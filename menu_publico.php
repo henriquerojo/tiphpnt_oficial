@@ -39,8 +39,7 @@ $rows_tipos = $lista_tipos->fetch_all();
 
                             <li class="active">
                                 <a href="index.php">
-                                    <span class="glyphicon glyphicon-home">
-                                    </span>
+                                    <span class="glyphicon glyphicon-home"></span>
                                 </a>
                             </li>
                             <li><a href="index.php#destaques">DESTAQUES</a></li>
