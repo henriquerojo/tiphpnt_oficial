@@ -117,7 +117,7 @@ if ($_POST){
                             <label for="imagem_produto">Imagem:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-pictures" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
                                 </span>
                                 <img src="" name="imagem" id="imagem" alt="" class="img-responsive">
                                 <input type="file" name="imagem_produto" id="imagem_produto" class="form-control" accept="image/*">

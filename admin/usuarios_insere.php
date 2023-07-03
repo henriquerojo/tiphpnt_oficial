@@ -37,7 +37,7 @@ if ($_POST){
         <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-6 col-md-8">
                 <h2 class="breadcrumb text-danger">
-                    <a href="tipos_lista.php">
+                    <a href="usuarios_lista.php">
                         <button class="btn btn-danger">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </button>

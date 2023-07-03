@@ -10,8 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
     -->
+    <!-- Link Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Link para CSS específico -->
-    
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 <nav class="nav navbar-inverse">
