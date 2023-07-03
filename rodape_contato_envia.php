@@ -20,7 +20,7 @@ $mail->Password = 'henrique1';
 $mail->setFrom($mail->Username, "Seu Nome"); // remetente(sistema)
 $mail->addAddress($mail->Username);                
 
-$mail->Subject = "Fale Conosco e VAI CORINTHIANS";
+$mail->Subject = "Fale Conosco";
 
 $conteudo_email = "
 Voce recebeu uma mensagem de $nome ($email):

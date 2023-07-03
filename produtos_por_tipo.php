@@ -1,7 +1,7 @@
 <?php 
     include "conn/connect.php";
     $idTipo = $_GET['id_tipo'];
-    $rotulo = $_GET['rotulo'];
+    // $rotulo = $_GET['rotulo_tipo'];
     $listaPorTipo = $conn->query("select * from vw_tbprodutos where id_tipo_produto = $idTipo;");
     $rowPorTipo = $listaPorTipo->fetch_assoc();
     $numRows = $listaPorTipo->num_rows;
@@ -24,7 +24,7 @@
                     <a href="javascript:window.history.go(-1)" class="btn btn-danger">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
-                    Não há produtos cadastrados deste tipo <?php echo $rotulo;?>
+                    Não há produtos cadastrados deste tipo <?php //echo $rotulo;?>
                 </h2>
             <?php }?>
         <!-- FIM MOSTRAR SE A CONSULTA RETORNAR VAZIO -->

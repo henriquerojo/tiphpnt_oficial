@@ -11,7 +11,7 @@
         <!-- INÍCIO ÁREA DE LOCALIZAÇÃO -->
         <div class="col-sm-6 col-md-4">
             <div class="panel footer" style="background: none;">
-                <img src="images/logotipo32.png" alt="logotipo da churrascaria">
+                <span class="glyphicon glyphicon-star"></span>
                 <br>
                 <i><strong>Churrascaria do timão!</strong></i>
                 <address>
@@ -107,7 +107,7 @@
                     <h6 class="text-danger text-center">
                         Desenvolvido por Rojo Technology&trade;2023
                         <br>
-                        <a href="https://youtube.com" target="_blank">henriquerojo.com.br</a>
+                        <a href="https://henriquerojo.github.io/portfolio/" target="_blank">henriquerojo.com.br</a>
                     </h6>
                 </div>
             </div>

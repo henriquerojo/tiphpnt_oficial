@@ -17,21 +17,21 @@ $rows_tipos = $lista_tipos->fetch_all();
             <div class="container-fluid">
                 <!-- INÍCIO AGRUPAMENTO MOBILE -->
                     <div class="navbar-header">
-                        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-targed="#menupublico" aria-expanded="false">
+                        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#menupublico" aria-expanded="false">
                             <span class="sr-only">Toggle Navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                         <a href="index.php" class="navbar-brand">
-                            <img src="images/logotipo32.png" alt="Logotipo da Churrascaria Henrique Rojo">
+                            <span class="glyphicon glyphicon-star" style="color: white;"></span>
                         </a>
                     </div>
                 <!-- FIM AGRUPAMENTO MOBILE -->
                 <!-- INÍCIO NAV DIREITA -->
                     <div class="collapse navbar-collapse" id="menupublico">
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
+                            <li style="margin-right: 10px;">
                                 <button type="button" class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#modalReserva">
                                     FAÇA SUA RESERVA
                                 </button>
