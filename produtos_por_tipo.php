@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Busca Por Tipo</title>
 </head>
-<body class="fundofixo">
+<body class="fundopadding">
     <?php include "menu_publico.php" ?>
     <div class="container">
         <!-- INÍCIO MOSTRAR SE A CONSULTA RETORNAR VAZIO -->

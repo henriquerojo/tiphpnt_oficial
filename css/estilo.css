@@ -9,3 +9,10 @@
     /* padding-top: 88px; */
 }
 
+.fundopadding
+{
+    background: url('../images/churrascaria.jpg') no-repeat fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-top: 88px;
+}
