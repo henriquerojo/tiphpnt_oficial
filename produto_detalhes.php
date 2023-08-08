@@ -22,7 +22,7 @@ $row_detalhe = $produto_detalhe->fetch_assoc();
         float: none !important;
     }
 </style>
-<body class="fundofixo">
+<body class="fundodetalhes">
     <!-- INÍCIO MENU PÚBLICO -->
     <header>
         <?php include "menu_publico.php";?>
