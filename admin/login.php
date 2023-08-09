@@ -56,16 +56,6 @@
                             <p class="text-info text-center" role="alert">
                                 <i class="fas fa-users fa-10x"></i>
                             </p>
-                            <br>
-                            <label for="destaque_produto">Logar como:</label>
-                            <div class="input-group">
-                                <label for="formulario_login" class="radio-inline">
-                                    <input type="radio" name="adm" id="adm" value="Sim" checked>Adm
-                                </label>
-                                <label for="destaque_produto_n" class="radio-inline">
-                                    <input type="radio" name="cli" id="cli" value="Não">Cliente
-                                </label>
-                            </div>
                             <div class="alert alert-info" role="alert">
                                 <form action="login.php" name="form_login" id="form_login" method="POST" enctype="multipart/form-data">
                                     <label for="login_usuario">Login:</label>
