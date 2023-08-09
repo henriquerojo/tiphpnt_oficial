@@ -41,11 +41,12 @@
     <script src="https://kit.fontawesome.com/2495680ceb.js" crossorigin="anonymous"></script>
     <!-- Link para CSS específico -->
     <link rel="stylesheet" href="../css/meu_estilo.css" type="text/css">
+    <link rel="stylesheet" href="../css/estilo.css">
     
     <title>Chuleta Quente - Login</title>
 </head>
 
-<body>
+<body class="fundofixo">
     <main class="container">
         <section>
             <article>
@@ -72,6 +73,7 @@
                                         </span>
                                         <input type="password" name="senha_usuario" id="senha_usuario" class="form-control" required autocomplete="off" placeholder="Digite sua senha.">
                                     </p>
+                                    <a href="../cliente/cliente_cadastro.php" style="text-decoration:none; color: blue;">Cadastre-se</a>
                                     <p class="text-right">
                                         <input type="submit" value="Entrar" class="btn btn-primary">
                                     </p>
