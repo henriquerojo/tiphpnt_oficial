@@ -27,28 +27,28 @@
                                     <label for="email_cliente">E-mail:</label>
                                     <p class="input-group">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-qrcode text-info" aria-hidden="true"></span>
+                                            <span class="glyphicon glyphicon-envelope text-info" aria-hidden="true"></span>
                                         </span>
                                         <input type="text" name="email_cliente" id="email_cliente" class="form-control" autofocus required autocomplete="off" placeholder="Digite seu e-mail">
                                     </p>
                                     <label for="cpf_cliente">CPF:</label>
                                     <p class="input-group">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-qrcode text-info" aria-hidden="true"></span>
+                                            <span class="glyphicon glyphicon-book text-info" aria-hidden="true"></span>
                                         </span>
-                                        <input type="text" name="cpf_cliente" id="cpf_cliente" class="form-control" autofocus required autocomplete="off" placeholder="Digite seu CPF">
+                                        <input type="text" name="cpf_cliente" id="cpf_cliente" class="form-control" autofocus required autocomplete="off" maxlength="14" placeholder="Digite seu CPF" onkeyup="mascara(this)">
                                     </p>
                                     <label for="senha_cliente">Senha:</label>
                                     <p class="input-group">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-qrcode text-info" aria-hidden="true"></span>
+                                            <span class="glyphicon glyphicon-lock text-info" aria-hidden="true"></span>
                                         </span>
                                         <input type="password" name="senha_cliente" id="senha_cliente" class="form-control" autofocus required autocomplete="off" placeholder="Digite sua senha">
                                     </p>
                                     <label for="senha_cliente">Confirmar Senha:</label>
                                     <p class="input-group">
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-qrcode text-info" aria-hidden="true"></span>
+                                            <span class="glyphicon glyphicon-lock text-info" aria-hidden="true"></span>
                                         </span>
                                         <input type="password" name="confirmasenha_cliente" id="confirmasenha_cliente" class="form-control" autofocus required autocomplete="off" placeholder="Digite sua senha novamente">
                                     </p>
@@ -63,5 +63,6 @@
             </article>
         </section>
     </main>
+    <script src="../js/scripts/mascaracpf.js">//script mascara do cpf feito em javascript</script>
 </body>
 </html>
