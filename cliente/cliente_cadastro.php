@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -45,13 +47,13 @@
                                         </span>
                                         <input type="password" name="senha_cliente" id="senha_cliente" class="form-control" autofocus required autocomplete="off" placeholder="Digite sua senha">
                                     </p>
-                                    <label for="senha_cliente">Confirmar Senha:</label>
+                                    <!-- <label for="senha_cliente">Confirmar Senha:</label>
                                     <p class="input-group">
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-lock text-info" aria-hidden="true"></span>
                                         </span>
                                         <input type="password" name="confirmasenha_cliente" id="confirmasenha_cliente" class="form-control" autofocus required autocomplete="off" placeholder="Digite sua senha novamente">
-                                    </p>
+                                    </p> -->
                                     <p class="text-right">
                                         <input type="submit" value="Cadastrar" class="btn btn-success">
                                     </p>
