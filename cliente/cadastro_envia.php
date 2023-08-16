@@ -18,19 +18,19 @@ if ($_POST)
         $insereUsuario = "INSERT INTO tbusuarios 
                 (login_usuario, senha_usuario, nivel_usuario)
                 VALUES 
-                ('$cpf_cliente', '$senha_cliente', 'com');
+                ('"  . + substr($cpf_cliente, 0, 3) . "', '$senha_cliente', 'com');
                 ";
 
         $resultado = $conn->query($insereUsuario);
     }
 
-    if ($rowCli == 0) 
+    if ($rowCli == 0)
     {
         $insereUsuario = "INSERT INTO tbusuarios 
                         (login_usuario, senha_usuario, nivel_usuario)
                         VALUES 
-                        ('$cpf_cliente', '$senha_cliente', 'com');
-                        ";
+                ('"  . + substr($cpf_cliente, 0, 3) . "', '$senha_cliente', 'com');
+                ";
         
         $insereCliente = "INSERT INTO tbclientes 
                         (nome, email, cpf)
