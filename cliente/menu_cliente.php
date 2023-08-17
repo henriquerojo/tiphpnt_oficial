@@ -3,6 +3,8 @@
 <head>
     <title>Área Cliente</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
     <nav class="nav navbar-inverse">
@@ -34,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="logout.php">
+                    <a href="../admin/logout.php">
                         <span class="glyphicon glyphicon-log-out"></span>
                     </a>
                 </li>
