@@ -13,7 +13,7 @@
             <div class="panel footer" style="background: none;">
                 <span class="glyphicon glyphicon-star"></span>
                 <br>
-                <i><strong>Churrascaria do timão!</strong></i>
+                <i><strong>Churrascaria do zelão!</strong></i>
                 <address>
                     <i>Avenida Itaquera, 8266 - Itaquera - São Paulo - SP - CEP 08295000</i>
                     <br>
